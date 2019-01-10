@@ -1,1 +1,1 @@
-# My Exercises code of leetcode
+# How to use python in math

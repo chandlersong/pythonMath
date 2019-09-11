@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 intall_requires = [
     'pandas>=0.18.1',
     'numpy>=1.11.0',
-    'matplotlib>=3.0.2'
+    'matplotlib>=3.0.2',
+    'scipy>=1.2.0'
 ]
 
 with open('README.md') as f:
@@ -14,7 +15,7 @@ with open('LICENSE') as f:
 
 setup(
     name='pythonMath',
-    packages=find_packages(exclude=['tests', 'tests.*', 'demo', 'demo.*']),
+    packages=find_packages(exclude=['python_math', 'python_math.*']),
     version='0.1',
     license=licence,
     author='Chandler Song',

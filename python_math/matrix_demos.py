@@ -16,6 +16,16 @@ class MatrixCalculate(TestCase):
         print(np.dot(matrix_a, matrix_b))
         self.assertEqual(True, True)
 
+    def test_inverse(self):
+        matrix = np.random.random(9).reshape([3, 3])
+        inverse = np.linalg.inv(matrix)
+
+        print(matrix)
+        print(inverse)
+        dot = matrix.dot(inverse)
+        print(dot)
+        self.assertEqual(True, True)
+
 
 if __name__ == '__main__':
     unittest.main()

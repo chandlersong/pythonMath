@@ -1,6 +1,6 @@
 import unittest
 from unittest import TestCase
-
+from scipy import linalg as la
 import numpy as np
 
 
@@ -24,6 +24,16 @@ class MatrixCalculate(TestCase):
         print(inverse)
         dot = matrix.dot(inverse)
         print(dot)
+        self.assertEqual(True, True)
+
+    def test_lu(self):
+        matrix = np.array([[9, 8, 7], [5, 6, 4], [3, 2, 1]])
+
+        p, l, u = la.lu(matrix)
+
+        print(p)
+        print(l)
+        print(u)
         self.assertEqual(True, True)
 
 

@@ -1,8 +1,9 @@
 import unittest
 from unittest import TestCase
-from scipy import linalg as la
-from numpy.linalg import matrix_rank
+
 import numpy as np
+from numpy.linalg import matrix_rank
+from scipy import linalg as la
 from sympy import *
 
 
@@ -41,7 +42,35 @@ class MatrixCalculate(TestCase):
     def test_rref(self):
         matrix = np.array([[1, 2, 2, 2], [2, 4, 6, 8], [3, 6, 8, 10]])
         print(matrix_rank(matrix))
-        print(Matrix(matrix).rref())
+        A = Matrix(matrix)
+        print(A.rref())
+        print("null space: \n")
+        null_space = A.nullspace()
+        print(null_space)
+        self.assertEqual(True, True)
+
+    def test_null_space_2(self):
+        matrix = np.array([[1, 2, 2, 2], [2, 4, 6, 8], [3, 6, 8, 10]])
+        A = Matrix(matrix)
+        print("null space: \n")
+        null_space = A.nullspace()
+        print(null_space)
+
+        print(np.dot(matrix, np.array([-2, 1, 0, 0])))
+        print(np.dot(matrix, np.array([2, 0, -2, 1])))
+
+    def test_null_space(self):
+        """
+        this is not accuracy
+        :return:
+        """
+        matrix = np.array([[1, 2, 2, 2], [2, 4, 6, 8], [3, 6, 8, 10]])
+        space = la.null_space(matrix)
+        print(space)
+        print(space[:, 0:1])
+        print(space[:, 1:2])
+        print(np.dot(matrix, space[:, 0:1]))
+        print(np.dot(matrix, space[:, 1:2]))
         self.assertEqual(True, True)
 
 

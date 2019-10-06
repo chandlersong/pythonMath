@@ -1,7 +1,9 @@
 import unittest
 from unittest import TestCase
 from scipy import linalg as la
+from numpy.linalg import matrix_rank
 import numpy as np
+from sympy import *
 
 
 class MatrixCalculate(TestCase):
@@ -34,6 +36,12 @@ class MatrixCalculate(TestCase):
         print(p)
         print(l)
         print(u)
+        self.assertEqual(True, True)
+
+    def test_rref(self):
+        matrix = np.array([[1, 2, 2, 2], [2, 4, 6, 8], [3, 6, 8, 10]])
+        print(matrix_rank(matrix))
+        print(Matrix(matrix).rref())
         self.assertEqual(True, True)
 
 

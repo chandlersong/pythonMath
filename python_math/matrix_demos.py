@@ -4,6 +4,7 @@ from unittest import TestCase
 import numpy as np
 from numpy.linalg import matrix_rank
 from scipy import linalg as la
+import scipy
 from sympy import *
 
 
@@ -71,6 +72,29 @@ class MatrixCalculate(TestCase):
         print(space[:, 1:2])
         print(np.dot(matrix, space[:, 0:1]))
         print(np.dot(matrix, space[:, 1:2]))
+        self.assertEqual(True, True)
+
+    def test_add_new_column(self):
+        matrix = np.array([[1, 2, 2, 2], [2, 4, 6, 8], [3, 6, 8, 10]])
+        print(matrix)
+        column = np.array([[1], [2], [3]])
+        print(column)
+        print(np.hstack((matrix, column)))
+        self.assertEqual(True, True)
+
+    def test_solve_matrix(self):
+        A = np.array([[1, 2, 2, 2], [2, 4, 6, 8], [3, 6, 8, 10]])
+        print(A)
+        b = np.array([1, 5, 6]).reshape([3, 1])
+        print(b)
+        print("solve")
+        print(np.linalg.lstsq(A, b))
+
+        '''
+        it must be a square matrix
+        '''
+        ##print(scipy.linalg.solve(A, b))
+
         self.assertEqual(True, True)
 
 

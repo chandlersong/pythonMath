@@ -4,3 +4,5 @@
    - Linear Equations
    - parabola
    - useful calculation
+ 
+- [algorithm.princeton](algorithm/princeton/READMD.md): algorithm 4 of princeton

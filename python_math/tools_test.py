@@ -1,9 +1,8 @@
 import unittest
 from unittest import TestCase
 
-import tools.utils as tools
 import tools as t
-import time
+import tools.utils as tools
 
 
 class TestAccumulator(TestCase):
@@ -18,7 +17,7 @@ class TestAccumulator(TestCase):
 
 
 class TestStopWatch(TestCase):
-    def test_wrok(self):
+    def test_work(self):
         stop_watch = t.create_stop_watch()
 
         print(stop_watch.elapse_time())

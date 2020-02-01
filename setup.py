@@ -4,7 +4,7 @@ intall_requires = [
     'pandas>=0.18.1',
     'numpy>=1.11.0',
     'matplotlib>=3.0.2',
-    'scipy>=1.2.0', 'sympy'
+    'scipy>=1.2.0', 'sympy', 'scikit-learn'
 ]
 
 with open('README.md') as f:
